@@ -5,7 +5,6 @@ const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000'; // Def
 
 const axiosInstance = axios.create({ baseURL });
 
-
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem('token'); // Get token from localStorage
   if (token) {
@@ -15,3 +14,4 @@ axiosInstance.interceptors.request.use((config) => {
 });
 
 export default axiosInstance;
+
